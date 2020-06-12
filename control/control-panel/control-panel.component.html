@@ -1,0 +1,38 @@
+<nav [class]="{'m-hidden': !menuVisible}">
+  <div class="titlebar">
+    <img *ngIf="logo" [src]="logo" alt="{{platformName}} logo'"/>
+    <span>{{platformName}}</span>
+    <i class="fas fa-bars" (click)="toggleMenu()"></i>
+  </div>
+  <a routerLink="./" routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}">
+    <i class="fas fa-tachometer-alt"></i>
+    <span i18n="dashboard|Startpage with dashboard-like info">Dashboard</span>
+  </a>
+  <a routerLink="./accounts/" routerLinkActive="current">
+    <i class="fas fa-users"></i>
+    <span i18n="accounts|Accounts description">Accounts</span>
+  </a>
+  <a routerLink="./roles/" routerLinkActive="current">
+    <i class="fas fa-user-tag"></i>
+    <span i18n="roles|Account roles">Roles</span>
+  </a>
+  <a routerLink="./albums/" routerLinkActive="current">
+    <i class="fas fa-images"></i>
+    <span i18n="albums|Albums description">Albums</span>
+  </a>
+  <a routerLink="./blogs/" routerLinkActive="current">
+    <i class="fas fa-book"></i>
+    <span i18n="blogs|Blogs description">Blogs</span>
+  </a>
+  <a routerLink="./events/" routerLinkActive="current">
+    <i class="fas fa-calendar-alt"></i>
+    <span i18n="events|Events description">Events</span>
+  </a>
+  <a (click)="signOut()">
+    <i class="fas fa-sign-out-alt"></i>
+    <span i18n="logout|Signing out of your account">Logout</span>
+  </a>
+</nav>
+<section id="page">
+    <router-outlet></router-outlet>
+</section>
